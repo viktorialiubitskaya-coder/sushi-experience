@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sushi Experience — Praia a Mare | All You Can Eat · AperiSushi · Delivery</title>
+  <meta name="description" content="Sushi Experience a Praia a Mare (CS). Menu All You Can Eat €30, AperiSushi €10 tutti i giorni 18–20, delivery a domicilio. Via L. Giugni 75.">
+  <meta property="og:title" content="Sushi Experience — Praia a Mare">
+  <meta property="og:description" content="All You Can Eat €30 · AperiSushi €10 · Delivery WhatsApp. Via L. Giugni 75, Praia a Mare (CS).">
+  <meta property="og:image" content="https://viktorialiubitskaya-coder.github.io/sushi-experience/sushi-cake-hero.jpg">
+  <meta property="og:url" content="https://viktorialiubitskaya-coder.github.io/sushi-experience/">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest:    '#143028',
+            'forest-m':'#1E4A38',
+            'forest-l':'#2A5C48',
+            acid:      '#A5D814',
+            'acid-d':  '#8DBF0F',
+            noir:      '#0A0A0A',
+            crema:     '#FAF8F2',
+            oro:       '#C9A14A',
+            'oro-l':   '#E8C46A',
+          },
+          fontFamily: {
+            bebas:  ['Bebas Neue', 'sans-serif'],
+            barlow: ['Barlow Condensed', 'sans-serif'],
+            body:   ['DM Sans', 'system-ui', 'sans-serif'],
+            space:  ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: #143028; color: #FAF8F2; }
+
+    /* ── Chromatic gradient (brand fingerprint) ── */
+    :root {
+      --chromatic: linear-gradient(135deg, #FF1493 0%, #FF6B1A 25%, #C71585 45%, #FFD700 72%, #A5D814 100%);
+    }
+
+    /* ── Chromatic border wrapper utility ── */
+    .chromatic-ring {
+      background: var(--chromatic);
+      padding: 2px;
+      border-radius: inherit;
+    }
+
+    /* ── Navbar ── */
+    .nav-transparent { background: transparent; }
+    .nav-solid       { background: rgba(20,48,40,.97); backdrop-filter: blur(12px); box-shadow: 0 2px 24px rgba(0,0,0,.4); }
+
+    /* ── Hero overlay ── */
+    .hero-overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(20,48,40,.55) 0%,
+        rgba(20,48,40,.45) 40%,
+        rgba(20,48,40,.70) 75%,
+        rgba(10,10,10,.85) 100%
+      );
+    }
+
+    /* ── Chromatic divider line ── */
+    .chromatic-line {
+      height: 2px;
+      background: var(--chromatic);
+      border: none;
+    }
+
+    /* ── Photo hover zoom ── */
+    .photo-zoom { overflow: hidden; }
+    .photo-zoom img { transition: transform .55s cubic-bezier(.25,.46,.45,.94); }
+    .photo-zoom:hover img { transform: scale(1.07); }
+
+    /* ── Chromatic pill badge ── */
+    .chromatic-pill {
+      position: relative;
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px;
+      background: var(--chromatic);
+    }
+    .chromatic-pill span {
+      display: block;
+      background: #143028;
+      border-radius: 999px;
+      padding: .35rem 1.1rem;
+      color: #FAF8F2;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: .75rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    /* ── Acid underline for section labels ── */
+    .acid-label {
+      display: inline-block;
+      color: #A5D814;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: .75rem;
+    }
+
+    /* ── AYC price number ── */
+    .price-hero {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(80px, 15vw, 140px);
+      line-height: 1;
+      color: #A5D814;
+    }
+
+    /* ── WhatsApp float ── */
+    .wa-float {
+      background: #25D366;
+      box-shadow: 0 4px 24px rgba(37,211,102,.45);
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .wa-float:hover {
+      background: #128C7E;
+      transform: scale(1.08);
+      box-shadow: 0 6px 30px rgba(37,211,102,.55);
+    }
+
+    /* ── Format card ── */
+    .format-card {
+      background: #1E4A38;
+      border: 1px solid rgba(165,216,20,.15);
+      transition: border-color .25s, transform .25s;
+    }
+    .format-card:hover {
+      border-color: #A5D814;
+      transform: translateY(-3px);
+    }
+
+    /* ── Menu panel ── */
+    .menu-panel { display: none; }
+    .menu-panel.active { display: block; }
+
+    /* ── Tab buttons ── */
+    .tab-on  { background: #A5D814; color: #0A0A0A; }
+    .tab-off { background: transparent; color: #A5D814; border-color: #A5D814; }
+
+    /* ── Kanji decoration ── */
+    @keyframes float-y {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
+    .float-anim { animation: float-y 5s ease-in-out infinite; }
+
+    /* ── Scroll fade in ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+
+<body class="bg-forest text-crema antialiased">
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════════════ -->
+<nav id="navbar" class="nav-transparent fixed inset-x-0 top-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+
+      <!-- Logo -->
+      <a href="#top" class="flex flex-col leading-none group" aria-label="Sushi Experience — torna su">
+        <div class="relative inline-block">
+          <!-- SUSHI text -->
+          <span class="font-barlow font-black text-acid text-3xl lg:text-4xl tracking-tight uppercase block"
+                style="letter-spacing:-.02em">SUSHI</span>
+          <!-- Chopsticks SVG over the "I" area -->
+          <svg class="absolute pointer-events-none"
+               style="top:-5px;right:-2px;width:24px;height:40px"
+               viewBox="0 0 24 40" aria-hidden="true">
+            <line x1="6"  y1="2"  x2="18" y2="38" stroke="#0A0A0A" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="18" y1="2"  x2="6"  y2="38" stroke="#0A0A0A" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="font-barlow font-black text-crema/90 text-lg tracking-[.04em] uppercase"
+              style="margin-top:-3px">EXPERIENCE</span>
+        <span class="font-space text-acid/65 text-[9px] tracking-[.25em] uppercase mt-0.5">PRAIA A MARE</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex items-center gap-7">
+        <a href="#formati"  class="text-crema/80 hover:text-acid text-sm font-medium tracking-wide transition-colors">Menu</a>
+        <a href="#signature" class="text-crema/80 hover:text-acid text-sm font-medium tracking-wide transition-colors">I Piatti</a>
+        <a href="#ambiente"  class="text-crema/80 hover:text-acid text-sm font-medium tracking-wide transition-colors">L'Ambiente</a>
+        <a href="#delivery"  class="text-crema/80 hover:text-acid text-sm font-medium tracking-wide transition-colors">Delivery</a>
+        <a href="#dove"      class="text-crema/80 hover:text-acid text-sm font-medium tracking-wide transition-colors">Dove Siamo</a>
+        <a href="https://wa.me/393923267992" target="_blank" rel="noopener"
+           class="bg-acid hover:bg-acid-d text-noir px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all hover:shadow-lg">
+          Ordina su WhatsApp
+        </a>
+      </div>
+
+      <!-- Mobile burger -->
+      <button id="burger" class="lg:hidden text-crema p-2 rounded-lg hover:bg-white/10 transition-colors" aria-label="Menu">
+        <svg id="ic-open"  class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="ic-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-forest/98 backdrop-blur-md border-t border-acid/10">
+    <div class="max-w-7xl mx-auto px-5 py-5 space-y-1">
+      <a href="#formati"   class="block text-crema/85 hover:text-acid py-3 text-sm font-medium border-b border-white/5">Menu & Formati</a>
+      <a href="#signature" class="block text-crema/85 hover:text-acid py-3 text-sm font-medium border-b border-white/5">I Piatti Signature</a>
+      <a href="#ambiente"  class="block text-crema/85 hover:text-acid py-3 text-sm font-medium border-b border-white/5">L'Ambiente</a>
+      <a href="#delivery"  class="block text-crema/85 hover:text-acid py-3 text-sm font-medium border-b border-white/5">Delivery</a>
+      <a href="#dove"      class="block text-crema/85 hover:text-acid py-3 text-sm font-medium">Dove Siamo</a>
+      <a href="https://wa.me/393923267992" target="_blank" rel="noopener"
+         class="block bg-acid text-noir text-center py-3.5 rounded-full text-sm font-bold mt-4">
+        📲 Ordina su WhatsApp: +39 392 326 7992
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO — food-first, sushi cake
+════════════════════════════════════════════════════════════ -->
+<section id="top" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- BG food photo -->
+  <div class="absolute inset-0">
+    <img src="sushi-cake-hero.jpg"
+         alt="Sushi Cake al salmone — Sushi Experience Praia a Mare"
+         class="w-full h-full object-cover object-center" loading="eager">
+    <div class="hero-overlay absolute inset-0"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center px-5 sm:px-10 max-w-4xl mx-auto pt-20">
+
+    <!-- Chromatic label -->
+    <div class="inline-block mb-6">
+      <div class="chromatic-ring rounded-full">
+        <span class="block bg-forest rounded-full px-5 py-1.5 text-xs font-space font-600 tracking-[.2em] text-crema uppercase">
+          Praia a Mare · Aperto 7 giorni su 7
+        </span>
+      </div>
+    </div>
+
+    <!-- Main headline -->
+    <h1 class="font-bebas leading-none mb-3">
+      <span class="block text-crema" style="font-size: clamp(52px, 12vw, 108px); letter-spacing:.02em">
+        SCOPRI IL VERO
+      </span>
+      <span class="block text-acid" style="font-size: clamp(52px, 12vw, 108px); letter-spacing:.02em">
+        LUSSO DEL GUSTO
+      </span>
+    </h1>
+
+    <p class="font-body text-crema/70 text-base sm:text-lg tracking-wide mb-10">
+      Sushi · Cocktail · All You Can Eat · AperiSushi · Delivery
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://wa.me/393923267992" target="_blank" rel="noopener"
+         class="bg-acid hover:bg-acid-d text-noir px-9 py-4 rounded-full font-bold text-lg transition-all hover:shadow-2xl hover:-translate-y-0.5">
+        📲 Prenota su WhatsApp
+      </a>
+      <a href="#ayc"
+         class="bg-forest-m/80 hover:bg-forest-m border border-acid/40 hover:border-acid text-crema px-9 py-4 rounded-full font-semibold text-lg transition-all hover:-translate-y-0.5">
+        Menu All You Can Eat →
+      </a>
+    </div>
+
+    <!-- Sub-claims -->
+    <div class="mt-12 flex flex-wrap items-center justify-center gap-5 text-crema/50 text-sm font-space">
+      <span class="text-acid font-semibold">€ 30 · All You Can Eat</span>
+      <span class="text-crema/25">·</span>
+      <span class="text-acid font-semibold">€ 10 · AperiSushi</span>
+      <span class="text-crema/25">·</span>
+      <span>Delivery a domicilio</span>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-crema/30 animate-bounce">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- Chromatic section divider -->
+<hr class="chromatic-line">
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TRE FORMATI — hook strip
+════════════════════════════════════════════════════════════ -->
+<section id="formati" class="py-16 px-5 bg-forest">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-10 fade-up">
+      <span class="acid-label">Scegli la tua esperienza</span>
+      <h2 class="font-barlow font-black text-crema text-4xl sm:text-5xl uppercase tracking-tight">
+        Tre Modi di Vivere il Sushi
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+      <!-- IN SALA AYC -->
+      <a href="#ayc" class="format-card rounded-3xl p-7 block fade-up group">
+        <div class="text-4xl mb-4">🍣</div>
+        <div class="chromatic-pill mb-4"><span>In Sala</span></div>
+        <h3 class="font-barlow font-black text-crema text-2xl uppercase tracking-tight mb-2 group-hover:text-acid transition-colors">
+          All You Can Eat
+        </h3>
+        <div class="font-bebas text-acid text-6xl leading-none mb-3">€ 30</div>
+        <p class="text-crema/65 text-sm leading-relaxed font-body">
+          Sushi senza limite. Nigiri, sashimi, maki, uramaki, hot roll.<br>
+          <span class="text-crema/40 text-xs">Bevande non incluse</span>
+        </p>
+        <div class="mt-5 text-acid text-sm font-space font-semibold tracking-wide group-hover:translate-x-1 transition-transform inline-block">
+          Prenota ora →
+        </div>
+      </a>
+
+      <!-- APERISUSHI -->
+      <a href="#aperisushi" class="format-card rounded-3xl p-7 block fade-up group" style="transition-delay:.1s">
+        <div class="text-4xl mb-4">🍸</div>
+        <div class="chromatic-pill mb-4"><span>Tutti i giorni</span></div>
+        <h3 class="font-barlow font-black text-crema text-2xl uppercase tracking-tight mb-2 group-hover:text-acid transition-colors">
+          AperiSushi
+        </h3>
+        <div class="font-bebas text-acid text-6xl leading-none mb-3">€ 10</div>
+        <p class="text-crema/65 text-sm leading-relaxed font-body">
+          Ogni giorno dalle 18:00 alle 20:00.<br>
+          Aperitivo + sushi. L'orario più bello della giornata.
+        </p>
+        <div class="mt-5 text-acid text-sm font-space font-semibold tracking-wide group-hover:translate-x-1 transition-transform inline-block">
+          Ci vediamo stasera →
+        </div>
+      </a>
+
+      <!-- DELIVERY -->
+      <a href="#delivery" class="format-card rounded-3xl p-7 block fade-up group" style="transition-delay:.2s">
+        <div class="text-4xl mb-4">🛵</div>
+        <div class="chromatic-pill mb-4"><span>A casa tua</span></div>
+        <h3 class="font-barlow font-black text-crema text-2xl uppercase tracking-tight mb-2 group-hover:text-acid transition-colors">
+          Delivery
+        </h3>
+        <div class="font-bebas text-acid text-5xl leading-none mb-3">WhatsApp</div>
+        <p class="text-crema/65 text-sm leading-relaxed font-body">
+          Ordine minimo €30. Consegna a domicilio a Praia a Mare e zone limitrofe.<br>
+          Diretto su WhatsApp, senza piattaforme.
+        </p>
+        <div class="mt-5 text-acid text-sm font-space font-semibold tracking-wide group-hover:translate-x-1 transition-transform inline-block">
+          Ordina ora →
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Chromatic divider -->
+<hr class="chromatic-line">
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO DISH #1 — SUSHI CAKE (2-column)
+════════════════════════════════════════════════════════════ -->
+<section id="signature" class="py-20 px-5 bg-forest-m">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-14 fade-up">
+      <span class="acid-label">I nostri signature</span>
+      <h2 class="font-barlow font-black text-crema text-5xl sm:text-6xl uppercase tracking-tight">
+        Il Meglio del Nostro Mare
+      </h2>
+      <p class="text-crema/55 font-body mt-3 max-w-lg mx-auto">
+        Creatività, tecnica e materia prima. Ogni piatto è una firma.
+      </p>
+    </div>
+
+    <!-- Hero Dish #1: Sushi Cake -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden mb-6 fade-up">
+      <!-- Photo -->
+      <div class="photo-zoom h-72 sm:h-80 lg:h-auto lg:min-h-[480px]">
+        <img src="sushi-cake-chopstick.jpg"
+             alt="Sushi Cake al salmone — Sushi Experience"
+             class="w-full h-full object-cover">
+      </div>
+      <!-- Text -->
+      <div class="bg-noir flex flex-col justify-center p-8 lg:p-12">
+        <div class="chromatic-pill self-start mb-5"><span>HERO DISH #1</span></div>
+        <h3 class="font-bebas text-acid leading-none mb-4"
+            style="font-size: clamp(40px, 6vw, 68px)">
+          SUSHI CAKE<br>AL SALMONE
+        </h3>
+        <p class="font-body text-crema/75 text-base leading-relaxed mb-6">
+          Salmone fresco, panna montata rosetta, tobiko rosso.
+          Il piatto più fotografato di Praia a Mare — e il più buono.
+        </p>
+        <div class="space-y-2 mb-8">
+          <div class="flex items-center gap-2 text-sm text-crema/60 font-space">
+            <span class="w-1.5 h-1.5 rounded-full bg-acid flex-shrink-0"></span>
+            Salmone fresco del giorno
+          </div>
+          <div class="flex items-center gap-2 text-sm text-crema/60 font-space">
+            <span class="w-1.5 h-1.5 rounded-full bg-acid flex-shrink-0"></span>
+            Panna montata rosetta
+          </div>
+          <div class="flex items-center gap-2 text-sm text-crema/60 font-space">
+            <span class="w-1.5 h-1.5 rounded-full bg-acid flex-shrink-0"></span>
+            Tobiko rosso · Avocado
+          </div>
+        </div>
+        <span class="text-crema/30 text-xs font-space uppercase tracking-widest">Disponibile in sala · Menu AYC incluso</span>
+      </div>
+    </div>
+
+    <!-- Hero Dish #2: Tartare Kintsugi (inversed) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden mb-14 fade-up">
+      <!-- Text (left on desktop) -->
+      <div class="bg-noir flex flex-col justify-center p-8 lg:p-12 order-2 lg:order-1">
+        <div class="chromatic-pill self-start mb-5"><span>HERO DISH #2</span></div>
+        <h3 class="font-bebas text-oro leading-none mb-4"
+            style="font-size: clamp(40px, 6vw, 68px)">
+          TARTARE DI<br>SALMONE
+        </h3>
+        <p class="font-body text-crema/75 text-base leading-relaxed mb-6">
+          Salmone, avocado, pistacchio su piatto kintsugi nero-oro.
+          Tecnica giapponese dell'oro riparato — il piatto che racconta una storia.
+        </p>
+        <div class="space-y-2 mb-8">
+          <div class="flex items-center gap-2 text-sm text-crema/60 font-space">
+            <span class="w-1.5 h-1.5 rounded-full bg-oro flex-shrink-0"></span>
+            Salmone fresco · Avocado cremoso
+          </div>
+          <div class="flex items-center gap-2 text-sm text-crema/60 font-space">
+            <span class="w-1.5 h-1.5 rounded-full bg-oro flex-shrink-0"></span>
+            Pistacchio di Bronte
+          </div>
+          <div class="flex items-center gap-2 text-sm text-crema/60 font-space">
+            <span class="w-1.5 h-1.5 rounded-full bg-oro flex-shrink-0"></span>
+            Piatto kintsugi nero-oro
+          </div>
+        </div>
+        <span class="text-crema/30 text-xs font-space uppercase tracking-widest">Disponibile in sala · Menu AYC incluso</span>
+      </div>
+      <!-- Photo -->
+      <div class="photo-zoom h-72 sm:h-80 lg:h-auto lg:min-h-[480px] order-1 lg:order-2">
+        <img src="tartare-kintsugi.jpg"
+             alt="Tartare di salmone su piatto kintsugi — Sushi Experience"
+             class="w-full h-full object-cover">
+      </div>
+    </div>
+
+    <!-- Signature Grid 2×2 -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 fade-up">
+
+      <!-- Salmon Uramaki -->
+      <div class="photo-zoom rounded-2xl relative group h-52 sm:h-64 lg:h-72">
+        <img src="salmon-uramaki.jpg"
+             alt="Uramaki al salmone" class="w-full h-full object-cover rounded-2xl">
+        <div class="absolute inset-0 rounded-2xl"
+             style="background: linear-gradient(to top, rgba(10,10,10,.85) 0%, transparent 50%)"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+          <span class="font-space font-600 text-xs text-acid/80 uppercase tracking-widest block mb-1">Rainbow Roll</span>
+          <h4 class="font-barlow font-bold text-crema text-lg leading-tight">Uramaki al Salmone</h4>
+        </div>
+        <!-- Chromatic border on hover -->
+        <div class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-acid transition-colors duration-300"></div>
+      </div>
+
+      <!-- Hot Roll Tempura -->
+      <div class="photo-zoom rounded-2xl relative group h-52 sm:h-64 lg:h-72">
+        <img src="hot-roll-tempura.jpg"
+             alt="Hot Roll Tempura teriyaki" class="w-full h-full object-cover rounded-2xl">
+        <div class="absolute inset-0 rounded-2xl"
+             style="background: linear-gradient(to top, rgba(10,10,10,.85) 0%, transparent 50%)"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+          <span class="font-space font-600 text-xs text-acid/80 uppercase tracking-widest block mb-1">Hot Roll</span>
+          <h4 class="font-barlow font-bold text-crema text-lg leading-tight">Tempura Teriyaki</h4>
+        </div>
+        <div class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-acid transition-colors duration-300"></div>
+      </div>
+
+      <!-- Futomaki -->
+      <div class="photo-zoom rounded-2xl relative group h-52 sm:h-64 lg:h-72">
+        <img src="futomaki-orchidea.jpg"
+             alt="Futomaki con orchidea" class="w-full h-full object-cover rounded-2xl">
+        <div class="absolute inset-0 rounded-2xl"
+             style="background: linear-gradient(to top, rgba(10,10,10,.85) 0%, transparent 50%)"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+          <span class="font-space font-600 text-xs text-acid/80 uppercase tracking-widest block mb-1">Classico</span>
+          <h4 class="font-barlow font-bold text-crema text-lg leading-tight">Futomaki</h4>
+        </div>
+        <div class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-acid transition-colors duration-300"></div>
+      </div>
+
+      <!-- Poke Bowl -->
+      <div class="photo-zoom rounded-2xl relative group h-52 sm:h-64 lg:h-72">
+        <img src="poke-bowl-full.jpg"
+             alt="Poke Bowl completo" class="w-full h-full object-cover rounded-2xl">
+        <div class="absolute inset-0 rounded-2xl"
+             style="background: linear-gradient(to top, rgba(10,10,10,.85) 0%, transparent 50%)"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+          <span class="font-space font-600 text-xs text-acid/80 uppercase tracking-widest block mb-1">Bowl</span>
+          <h4 class="font-barlow font-bold text-crema text-lg leading-tight">Poke Bowl</h4>
+        </div>
+        <div class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-acid transition-colors duration-300"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Chromatic divider -->
+<hr class="chromatic-line">
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ALL YOU CAN EAT — €30 feature
+════════════════════════════════════════════════════════════ -->
+<section id="ayc" class="py-24 px-5 bg-forest overflow-hidden relative">
+  <!-- BG texture: large AYC text -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden opacity-[.03]">
+    <span class="font-bebas text-acid whitespace-nowrap" style="font-size:30vw">AYC</span>
+  </div>
+
+  <div class="max-w-5xl mx-auto relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Text side -->
+      <div class="fade-up">
+        <span class="acid-label">Il format principale</span>
+        <h2 class="font-bebas text-crema leading-none mb-2"
+            style="font-size: clamp(48px, 8vw, 80px)">
+          MENU ALL YOU CAN EAT
+        </h2>
+        <div class="price-hero mb-6">€ 30</div>
+        <p class="font-body text-crema/70 text-lg leading-relaxed mb-8">
+          <strong class="text-crema">Tutto il sushi che vuoi.</strong> Senza limite, senza fretta.
+          Nigiri, sashimi, hosomaki, futomaki, uramaki, hot roll, sushi cake.
+        </p>
+
+        <!-- Incluso -->
+        <div class="bg-forest-m rounded-2xl p-6 mb-8 border border-acid/15">
+          <p class="font-space font-600 text-acid text-xs uppercase tracking-widest mb-4">Cosa è incluso</p>
+          <ul class="grid grid-cols-2 gap-2 text-sm text-crema/75 font-body">
+            <li class="flex items-center gap-2"><span class="text-acid">✓</span> Nigiri al salmone</li>
+            <li class="flex items-center gap-2"><span class="text-acid">✓</span> Nigiri al tonno</li>
+            <li class="flex items-center gap-2"><span class="text-acid">✓</span> Sashimi misto</li>
+            <li class="flex items-center gap-2"><span class="text-acid">✓</span> Hosomaki</li>
+            <li class="flex items-center gap-2"><span class="text-acid">✓</span> Uramaki</li>
+            <li class="flex items-center gap-2"><span class="text-acid">✓</span> Hot Roll Tempura</li>
+            <li class="flex items-center gap-2"><span class="text-acid">✓</span> Futomaki</li>
+            <li class="flex items-center gap-2"><span class="text-acid">✓</span> Sushi Cake</li>
+          </ul>
+          <p class="text-crema/35 text-xs mt-4 font-body">
+            Menu All You Can Eat — solo cibo. Bevande non incluse, chiedi la nostra lista al tavolo.
+          </p>
+        </div>
+
+        <a href="https://wa.me/393923267992" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-3 bg-acid hover:bg-acid-d text-noir px-9 py-4 rounded-full font-bold text-lg transition-all hover:shadow-2xl hover:-translate-y-0.5">
+          Prenota il Tavolo
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Photo side -->
+      <div class="fade-up">
+        <div class="chromatic-ring rounded-3xl">
+          <div class="photo-zoom rounded-[22px] aspect-square overflow-hidden">
+            <img src="plateau-corona.jpg"
+                 alt="Plateau All You Can Eat — Sushi Experience"
+                 class="w-full h-full object-cover">
+          </div>
+        </div>
+        <p class="text-crema/40 text-xs font-space text-center mt-4 uppercase tracking-widest">
+          Il nostro plateau completo
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Chromatic divider -->
+<hr class="chromatic-line">
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     APERISUSHI — €10 feature
+════════════════════════════════════════════════════════════ -->
+<section id="aperisushi" class="py-24 px-5 bg-noir overflow-hidden">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Photo side (left) -->
+      <div class="fade-up order-2 lg:order-1">
+        <div class="photo-zoom rounded-3xl overflow-hidden aspect-[4/3]">
+          <img src="aperisushi-lifestyle.jpg"
+               alt="AperiSushi — hot rolls con Aperol Spritz e gin tonic"
+               class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- Text side (right) -->
+      <div class="fade-up order-1 lg:order-2">
+        <span class="acid-label">Ogni giorno · 18:00 – 20:00</span>
+        <h2 class="font-bebas text-crema leading-none mb-2"
+            style="font-size: clamp(48px, 8vw, 80px)">
+          APERISUSHI
+        </h2>
+        <!-- Price with chromatic border -->
+        <div class="inline-block mb-6">
+          <div class="chromatic-ring rounded-2xl">
+            <div class="bg-noir rounded-[14px] px-8 py-4">
+              <span class="font-bebas text-acid block" style="font-size: clamp(64px, 10vw, 100px); line-height:1">€ 10</span>
+            </div>
+          </div>
+        </div>
+        <p class="font-body text-crema/70 text-lg leading-relaxed mb-4">
+          <strong class="text-crema">Aperitivo + sushi.</strong> Ogni giorno dalle 18 alle 20.
+          Il modo più bello di iniziare la serata.
+        </p>
+        <p class="font-body text-crema/50 text-sm leading-relaxed mb-8">
+          Gin tonic, Aperol Spritz, cocktail di stagione — e sushi fresco preparato al momento.
+          Non serve prenotare, ma i posti si riempiono in fretta.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://wa.me/393923267992" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2 bg-acid hover:bg-acid-d text-noir px-8 py-4 rounded-full font-bold transition-all hover:shadow-xl">
+            Ci vediamo stasera →
+          </a>
+        </div>
+        <p class="text-crema/30 text-xs font-space mt-4 uppercase tracking-widest">
+          Lun–Dom · 18:00 – 20:00 · Via L. Giugni 75
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Chromatic divider -->
+<hr class="chromatic-line">
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     BAR & DRINKS
+════════════════════════════════════════════════════════════ -->
+<section class="py-20 px-5 bg-forest">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-12 fade-up">
+      <span class="acid-label">Bar & Cocktail</span>
+      <h2 class="font-barlow font-black text-crema text-5xl sm:text-6xl uppercase tracking-tight">
+        Da Bere
+      </h2>
+      <p class="text-crema/50 font-body mt-3">Il sushi è ancora più buono con un cocktail in mano.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-up">
+
+      <!-- Blue Tropical -->
+      <div class="photo-zoom rounded-3xl overflow-hidden relative group h-72 sm:h-80">
+        <img src="blue-cocktail.jpg"
+             alt="Blue Tropical Cocktail — Sushi Experience"
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0"
+             style="background: linear-gradient(to top, rgba(10,10,10,.88) 0%, transparent 55%)"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <div class="chromatic-pill self-start mb-2"><span>Signature</span></div>
+          <h3 class="font-barlow font-black text-crema text-2xl uppercase">Blue Tropical</h3>
+          <p class="text-crema/60 text-sm font-body mt-1">Blue curaçao · ananas · cocco · lime</p>
+        </div>
+      </div>
+
+      <!-- Drink list cards -->
+      <div class="grid grid-rows-3 gap-4">
+        <div class="bg-forest-m rounded-2xl p-5 flex items-center gap-5 border border-acid/10 hover:border-acid/40 transition-colors">
+          <span class="text-3xl">🍊</span>
+          <div>
+            <h4 class="font-barlow font-bold text-crema text-xl uppercase">Aperol Spritz</h4>
+            <p class="text-crema/50 text-sm font-body">Aperol · prosecco · soda · arancia</p>
+          </div>
+        </div>
+        <div class="bg-forest-m rounded-2xl p-5 flex items-center gap-5 border border-acid/10 hover:border-acid/40 transition-colors">
+          <span class="text-3xl">🍹</span>
+          <div>
+            <h4 class="font-barlow font-bold text-crema text-xl uppercase">Gin Tonic</h4>
+            <p class="text-crema/50 text-sm font-body">Gin premium · tonica · rosmarino</p>
+          </div>
+        </div>
+        <div class="bg-forest-m rounded-2xl p-5 flex items-center gap-5 border border-acid/10 hover:border-acid/40 transition-colors">
+          <span class="text-3xl">🍺</span>
+          <div>
+            <h4 class="font-barlow font-bold text-crema text-xl uppercase">Beer & More</h4>
+            <p class="text-crema/50 text-sm font-body">Corona Extra · birre artigianali · soft drinks</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Chromatic divider -->
+<hr class="chromatic-line">
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     L'AMBIENTE — interni teal/oro
+════════════════════════════════════════════════════════════ -->
+<section id="ambiente" class="py-20 px-5 bg-noir">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Photo -->
+      <div class="fade-up">
+        <div class="photo-zoom rounded-3xl overflow-hidden aspect-[4/3]">
+          <img src="interno-teal.jpg"
+               alt="Interni Sushi Experience — parete teal, pannelli dorati art-deco"
+               class="w-full h-full object-cover">
+        </div>
+        <!-- Kanji decoration -->
+        <div class="flex justify-center gap-10 mt-6">
+          <div class="text-center float-anim">
+            <span class="font-body text-5xl text-oro/70">水</span>
+            <p class="text-crema/30 text-xs font-space uppercase tracking-widest mt-1">Acqua</p>
+          </div>
+          <div class="text-center float-anim" style="animation-delay:.8s">
+            <span class="font-body text-5xl text-oro/70">友</span>
+            <p class="text-crema/30 text-xs font-space uppercase tracking-widest mt-1">Amici</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="fade-up">
+        <span class="acid-label">L'ambiente</span>
+        <h2 class="font-barlow font-black text-crema text-4xl sm:text-5xl uppercase tracking-tight leading-tight mb-6">
+          Non Solo<br>
+          <span class="text-acid">Da Mangiare.</span><br>
+          Da Fotografare.
+        </h2>
+        <p class="font-body text-crema/70 text-lg leading-relaxed mb-6">
+          Pareti verde teal scuro, pannelli geometrici dorati art-deco, sedie dorate con velluto blu.
+          Luci Edison sospese, piante tropicali e kanji giapponesi.
+        </p>
+        <p class="font-body text-crema/55 text-base leading-relaxed mb-8">
+          Un ambiente dim-lit pensato per restare, non per fretta. Per un aperitivo, una cena,
+          o semplicemente per passare una serata che vale la pena ricordare.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="bg-forest-m text-crema/70 text-xs font-space font-600 px-3 py-1.5 rounded-full border border-acid/15">Dim-lit lounge</span>
+          <span class="bg-forest-m text-crema/70 text-xs font-space font-600 px-3 py-1.5 rounded-full border border-acid/15">Art-Deco dorato</span>
+          <span class="bg-forest-m text-crema/70 text-xs font-space font-600 px-3 py-1.5 rounded-full border border-acid/15">Instagrammabile</span>
+          <span class="bg-forest-m text-crema/70 text-xs font-space font-600 px-3 py-1.5 rounded-full border border-acid/15">Sedie velluto blu</span>
+        </div>
+        <a href="https://www.instagram.com/sushi_experience_praia.a.mare/" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-3 mt-8 text-sm font-space font-semibold text-crema/60 hover:text-crema transition-colors">
+          <div class="chromatic-ring rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+            <div class="bg-noir rounded-full w-9 h-9 flex items-center justify-center">
+              <svg class="w-5 h-5 text-crema" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </div>
+          </div>
+          @sushi_experience_praia.a.mare
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Chromatic divider -->
+<hr class="chromatic-line">
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     DELIVERY & ASPORTO
+════════════════════════════════════════════════════════════ -->
+<section id="delivery" class="py-20 px-5 bg-forest relative overflow-hidden">
+  <!-- BG photo overlay -->
+  <div class="absolute inset-0 opacity-20">
+    <img src="delivery-tramonto.jpg"
+         alt="Delivery Sushi Experience"
+         class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-forest/80"></div>
+  </div>
+
+  <div class="max-w-4xl mx-auto relative z-10 text-center fade-up">
+    <span class="acid-label">A casa tua</span>
+    <h2 class="font-bebas text-crema leading-none mb-4"
+        style="font-size: clamp(52px, 10vw, 96px)">
+      CONSEGNA<br>
+      <span class="text-acid">A DOMICILIO</span>
+    </h2>
+    <p class="font-body text-crema/70 text-lg leading-relaxed max-w-xl mx-auto mb-4">
+      Non devi muoverti. Ordina direttamente su WhatsApp e ti portiamo il sushi a casa.
+      Nessuna app, nessuna piattaforma — solo noi e tu.
+    </p>
+    <p class="text-crema/40 text-sm font-space mb-10 uppercase tracking-wide">
+      Ordine minimo €30 · Praia a Mare e zone limitrofe · Tutti i giorni
+    </p>
+
+    <!-- Big WhatsApp CTA -->
+    <div class="inline-block">
+      <div class="chromatic-ring rounded-full">
+        <a href="https://wa.me/393923267992" target="_blank" rel="noopener"
+           class="flex items-center gap-4 bg-noir text-crema px-10 py-5 rounded-full font-bold text-xl transition-all hover:bg-forest-m">
+          <svg class="w-8 h-8 text-[#25D366] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Ordina ora su WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <p class="mt-6 text-crema/35 text-sm font-space">
+      +39 392 326 7992 · Risposta rapida · Delivery diretto
+    </p>
+  </div>
+</section>
+
+
+<!-- Chromatic divider -->
+<hr class="chromatic-line">
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     DOVE SIAMO + ORARI
+════════════════════════════════════════════════════════════ -->
+<section id="dove" class="py-20 px-5 bg-noir">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-14 fade-up">
+      <span class="acid-label">Vieni a trovarci</span>
+      <h2 class="font-barlow font-black text-crema text-5xl sm:text-6xl uppercase tracking-tight">
+        Dove Siamo
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+      <!-- Info column -->
+      <div class="space-y-5 fade-up">
+
+        <!-- Address -->
+        <div class="bg-forest-m rounded-2xl p-6 border border-acid/10 flex items-start gap-4">
+          <div class="bg-acid text-noir rounded-xl p-3 flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-barlow font-bold text-acid text-lg uppercase tracking-wide mb-1">Indirizzo</div>
+            <p class="text-crema/80 font-body">Via L. Giugni, 75</p>
+            <p class="text-crema/80 font-body">87028 Praia a Mare (CS)</p>
+            <p class="text-crema/45 text-sm mt-1 font-body">Calabria, Italia</p>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div class="bg-forest-m rounded-2xl p-6 border border-acid/10">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="bg-acid text-noir rounded-xl p-3 flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div class="font-barlow font-bold text-acid text-lg uppercase tracking-wide">Orari</div>
+          </div>
+          <dl class="space-y-2 text-sm font-body">
+            <div class="flex justify-between items-center py-1.5 border-b border-crema/5">
+              <dt class="text-crema/60">Lunedì</dt>
+              <dd class="text-crema font-medium">18:00 – 22:30</dd>
+            </div>
+            <div class="flex justify-between items-center py-1.5 border-b border-crema/5">
+              <dt class="text-crema/60">Martedì</dt>
+              <dd class="text-crema font-medium">13:00–15:00 · 18:00–22:30</dd>
+            </div>
+            <div class="flex justify-between items-center py-1.5 border-b border-crema/5">
+              <dt class="text-crema/60">Mercoledì</dt>
+              <dd class="text-crema font-medium">18:00 – 22:30</dd>
+            </div>
+            <div class="flex justify-between items-center py-1.5 border-b border-crema/5">
+              <dt class="text-crema/60">Giovedì</dt>
+              <dd class="text-crema font-medium">18:00 – 22:30</dd>
+            </div>
+            <div class="flex justify-between items-center py-1.5 border-b border-crema/5">
+              <dt class="text-crema/60">Venerdì</dt>
+              <dd class="text-crema font-medium">18:00 – 22:30</dd>
+            </div>
+            <div class="flex justify-between items-center py-1.5 border-b border-crema/5">
+              <dt class="text-crema/60 font-semibold">Sabato</dt>
+              <dd class="text-acid font-bold">18:00 – 23:30</dd>
+            </div>
+            <div class="flex justify-between items-center py-1.5">
+              <dt class="text-crema/60">Domenica</dt>
+              <dd class="text-crema font-medium">13:00–15:00 · 18:00–22:30</dd>
+            </div>
+          </dl>
+          <div class="mt-4 bg-acid/10 border border-acid/20 rounded-xl px-4 py-2.5 text-center">
+            <span class="text-acid font-space font-600 text-sm">AperiSushi ogni giorno 18:00 – 20:00</span>
+          </div>
+        </div>
+
+        <!-- Contacts -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a href="tel:+393923267992"
+             class="flex items-center gap-3 bg-acid hover:bg-acid-d text-noir rounded-2xl p-5 transition-all hover:shadow-xl hover:-translate-y-0.5">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            <div>
+              <div class="text-xs text-noir/60 font-space font-medium">Telefono</div>
+              <div class="font-bold text-sm">+39 392 326 7992</div>
+            </div>
+          </a>
+          <a href="https://wa.me/393923267992" target="_blank" rel="noopener"
+             class="flex items-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-2xl p-5 transition-all hover:shadow-xl hover:-translate-y-0.5">
+            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <div>
+              <div class="text-xs text-white/70 font-space font-medium">WhatsApp</div>
+              <div class="font-bold text-sm">Ordina / Prenota</div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Map -->
+      <div class="fade-up rounded-2xl overflow-hidden border border-acid/10 h-full min-h-[450px]">
+        <iframe
+          src="https://maps.google.com/maps?q=Via+L.+Giugni+75+87028+Praia+a+Mare+CS+Italy&z=16&output=embed"
+          class="w-full h-full min-h-[450px]"
+          style="border:0;filter:invert(90%) hue-rotate(180deg)"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Sushi Experience su Google Maps">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="bg-forest py-16 px-5 border-t border-acid/10 relative overflow-hidden">
+  <!-- BG kanji ghost -->
+  <div class="absolute right-8 bottom-4 text-acid/[.04] font-body leading-none select-none pointer-events-none"
+       style="font-size:160px">水友</div>
+
+  <div class="max-w-5xl mx-auto relative z-10">
+
+    <!-- Logo + tagline -->
+    <div class="text-center mb-12">
+      <div class="flex flex-col items-center leading-none mb-4">
+        <div class="relative inline-block">
+          <span class="font-barlow font-black text-acid text-5xl tracking-tight uppercase block"
+                style="letter-spacing:-.02em">SUSHI</span>
+          <svg class="absolute pointer-events-none"
+               style="top:-8px;right:-4px;width:32px;height:52px"
+               viewBox="0 0 32 52" aria-hidden="true">
+            <line x1="8"  y1="2"  x2="24" y2="50" stroke="#0A0A0A" stroke-width="5" stroke-linecap="round"/>
+            <line x1="24" y1="2"  x2="8"  y2="50" stroke="#0A0A0A" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="font-barlow font-black text-crema/85 text-3xl tracking-wide uppercase"
+              style="margin-top:-4px">EXPERIENCE</span>
+        <span class="font-space text-acid/55 text-xs tracking-[.3em] uppercase mt-1">PRAIA A MARE</span>
+      </div>
+      <p class="font-body text-crema/50 text-lg italic">"Scopri il vero lusso del gusto"</p>
+      <p class="text-crema/30 text-sm mt-2 font-body">Via L. Giugni, 75 · 87028 Praia a Mare (CS)</p>
+    </div>
+
+    <!-- Nav + Social -->
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-6 py-8 border-y border-crema/8">
+      <nav class="flex flex-wrap gap-6 justify-center text-sm font-body" aria-label="Footer">
+        <a href="#formati"   class="text-crema/45 hover:text-acid transition-colors">Menu</a>
+        <a href="#signature" class="text-crema/45 hover:text-acid transition-colors">I Piatti</a>
+        <a href="#ambiente"  class="text-crema/45 hover:text-acid transition-colors">L'Ambiente</a>
+        <a href="#delivery"  class="text-crema/45 hover:text-acid transition-colors">Delivery</a>
+        <a href="#dove"      class="text-crema/45 hover:text-acid transition-colors">Dove Siamo</a>
+      </nav>
+
+      <a href="https://www.instagram.com/sushi_experience_praia.a.mare/" target="_blank" rel="noopener"
+         class="flex items-center gap-2 text-crema/45 hover:text-crema transition-colors text-sm font-body">
+        <div class="chromatic-ring rounded-full w-9 h-9 flex items-center justify-center flex-shrink-0">
+          <div class="bg-forest rounded-full w-8 h-8 flex items-center justify-center">
+            <svg class="w-4 h-4 text-crema" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+        </div>
+        @sushi_experience_praia.a.mare
+      </a>
+    </div>
+
+    <div class="mt-8 text-center text-crema/20 text-xs font-body space-y-1">
+      <p>© 2025 Sushi Experience · Via L. Giugni 75 · Praia a Mare (CS) · Tutti i diritti riservati</p>
+      <p>WhatsApp: +39 392 326 7992 · Aperto 7 giorni su 7</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHATSAPP FLOAT
+════════════════════════════════════════════════════════════ -->
+<a href="https://wa.me/393923267992" target="_blank" rel="noopener"
+   class="wa-float fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center"
+   aria-label="Ordina o prenota su WhatsApp">
+  <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="absolute top-1 right-1 w-3 h-3 bg-white rounded-full animate-ping opacity-60" aria-hidden="true"></span>
+</a>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════════════════ -->
+<script>
+  // ── Navbar scroll ──
+  const navbar = document.getElementById('navbar');
+  function updateNav() {
+    navbar.classList.toggle('nav-transparent', window.scrollY <= 72);
+    navbar.classList.toggle('nav-solid', window.scrollY > 72);
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  // ── Mobile menu ──
+  const burger = document.getElementById('burger');
+  const mm = document.getElementById('mobile-menu');
+  const icOpen = document.getElementById('ic-open');
+  const icClose = document.getElementById('ic-close');
+  burger.addEventListener('click', () => {
+    const open = !mm.classList.contains('hidden');
+    mm.classList.toggle('hidden', open);
+    icOpen.classList.toggle('hidden', !open);
+    icClose.classList.toggle('hidden', open);
+  });
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mm.classList.add('hidden');
+    icOpen.classList.remove('hidden');
+    icClose.classList.add('hidden');
+  }));
+
+  // ── Scroll fade-in ──
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
